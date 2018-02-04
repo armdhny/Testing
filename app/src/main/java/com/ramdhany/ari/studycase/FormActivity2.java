@@ -20,6 +20,7 @@ public class FormActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form2);
 
+
         Intent intent = getIntent();
 
         String pTempat = intent.getStringExtra("tempat");
@@ -40,6 +41,9 @@ public class FormActivity2 extends AppCompatActivity {
         nominal = (TextView) findViewById(R.id.tNom);
         nominal.setText(String.valueOf(jNominal));
 
+
+        //perintah conditional untuk memeriksa  suatu kondisi,lalu akan menjalankan program sesuai
+        // dengan syarat/kondisi yang akan ditampilkan.
         if (jNominal > 65000){
             Context context = getApplicationContext();
             Toast toast = Toast.makeText(context, "Jangan Makan Malam disini! Kemahalan. Uangmu Sedikit", Toast.LENGTH_LONG);

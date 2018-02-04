@@ -10,11 +10,11 @@ import android.widget.EditText;
 
 public class FormActivity extends AppCompatActivity {
     private static final String LOG_TAG = FormActivity.class.getSimpleName();
-
+//    extras merupakan kunci untuk mendapatkan kembali suatu nilai teks. mendefinisikan extras intent
+//    dengan menggunakan nama paket aplikasi.
+//    memastikan extras itu unik
     static final String MAKAN ="com.ramdhany.ari.studycase.extra.MAKAN";
     static final String Jumlah ="com.ramdhany.ari.studycase.extra.Jumlah";
-    static final String Nominal ="com.ramdhany.ari.studycase.extra.Nominal";
-
 
     EditText makan;
     EditText jum;
@@ -26,7 +26,8 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
-
+//variabel makan disini untuk mencari suatu EdiText dengan cara
+//        memanggil id dari suatu Edit TeXT
         makan = (EditText) findViewById(R.id.editText_main);
         jum = (EditText) findViewById(R.id.editTextJmlh);
     }
@@ -50,12 +51,13 @@ public class FormActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Abnormal(View view) {
+    public void Abnormal(View view) { //deklarasi instance class
         Log.d(LOG_TAG, "Button clicked!"); //cek tombol bisa berfungsi pada log
 
 
         Intent intent = new Intent(this, FormActivity2.class);
 
+        //Metod putExtra() menambahkan nilai EditText ke intent
         intent.putExtra("tempat","Abnormal");
 
         String makanan = makan.getText().toString();
